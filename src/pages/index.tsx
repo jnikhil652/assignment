@@ -24,12 +24,6 @@ export async function getServerSideProps() {
     };
   });
 
-  // const algoliaData = simplifiedData.map((post, index) => ({
-  //   objectID: index.toString(),
-  //   title: post.title,
-  //   body: post.body,
-  // }));
-
   console.log(simplifiedData);
   // Push data to Algolia
   await searchClient.initIndex(searchIndex).saveObjects(simplifiedData).wait();
